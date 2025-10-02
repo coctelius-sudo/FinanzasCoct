@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finanzas</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#111827">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-900 text-gray-100 flex flex-col h-screen">
+  <main class="flex-1 overflow-y-auto p-4">
+    <!-- Dashboard -->
+    <section id="dashboard" class="view">
+      <h1 class="text-xl font-bold mb-4">Dashboard</h1>
+      <canvas id="chartCategorias" class="mb-6"></canvas>
+      <div id="resumen" class="space-y-2"></div>
+    </section>
+
+    <!-- Movimientos -->
+    <section id="movimientos" class="view hidden">
+      <h1 class="text-xl font-bold mb-4">Movimientos</h1>
+      <button id="btn-add" class="bg-blue-600 px-4 py-2 rounded">Añadir movimiento</button>
+      <ul id="lista-movimientos" class="mt-4 space-y-2"></ul>
+    </section>
+
+    <!-- Presupuesto -->
+    <section id="presupuesto" class="view hidden">
+      <h1 class="text-xl font-bold mb-4">Presupuesto</h1>
+      <label class="block mb-2">Presupuesto mensual:</label>
+      <input type="number" id="presupuesto-input" class="text-black p-2 rounded w-full mb-4">
+      <button id="btn-guardar-presupuesto" class="bg-green-600 px-4 py-2 rounded">Guardar</button>
+      <div id="presupuesto-info" class="mt-4"></div>
+    </section>
+
+    <!-- Configuración -->
+    <section id="configuracion" class="view hidden">
+      <h1 class="text-xl font-bold mb-4">Configuración</h1>
+      <button id="btn-exportar" class="bg-purple-600 px-4 py-2 rounded mb-2">Exportar a Excel</button><br>
+      <button id="btn-backup" class="bg-yellow-600 px-4 py-2 rounded">Descargar Backup</button>
+    </section>
+  </main>
+
+  <!-- Navegación inferior -->
+  <nav class="bottom-nav flex justify-around bg-gray-800 p-2">
+    <button class="nav-btn" data-target="dashboard">🏠</button>
+    <button class="nav-btn" data-target="movimientos">📋</button>
+    <button class="nav-btn" data-target="presupuesto">💰</button>
+    <button class="nav-btn" data-target="configuracion">⚙️</button>
+  </nav>
+
+  <script src="app.js?v=2"></script>
+</body>
+</html>
